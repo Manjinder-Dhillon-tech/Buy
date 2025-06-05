@@ -1,0 +1,25 @@
+.notification-flex {
+  .day-text {
+    display: block;
+    padding: .6rem 0rem 0rem;
+    margin-left: auto;
+    width: fit-content;
+    font-size: 0.813rem;
+    color: var(--ion-color-secondary);
+  }
+  display: flex;
+  gap: 0.958rem;
+  padding: 0rem 0rem 1.25rem;
+  border-bottom: 1px solid #80808030;
+  ion-img {
+    width: 2rem;
+    min-width: 2rem;
+  }
+  h5 {
+    margin: 0;
+    font-size: 1.063rem;
+  }
+  .notification-content {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border ion-padding">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-text class="main-title">
+        <ion-icon
+          [routerLink]="['/pages/home']"
+          class="first"
+          name="chevron-back-outline"
+        ></ion-icon>
+        <ion-label class="label">Notifications</ion-label>
+      </ion-text>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-text *ngFor="let data of notifications" class="notification-flex">
+    <ion-img class="notification-img" [src]="data.img"></ion-img>
+    <ion-text>
+      <ion-text class="day-text">{{data.time}}</ion-text>
+      <h5 class="notification-title">{{data.title}}</h5>
+      <ion-text class="notification-content">{{data.description}}</ion-text>
+    </ion-text>
+  </ion-text>
+</ion-content>

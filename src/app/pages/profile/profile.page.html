@@ -1,0 +1,23 @@
+<ion-header color="primary" class="ion-no-border ion-no-padding">
+  <ion-toolbar color="primary"> </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="profile card ion-no-margin ion-no-padding">
+    <ion-card-content class="upper-card">
+      <ion-img src="../../assets/profile-img.jpg" class="profile-img"></ion-img>
+      <ion-text class="name">Amita Patel</ion-text>
+      <ion-text class="email">amita.patel&#64;gmail.com</ion-text>
+    </ion-card-content>
+
+    <ion-card-content class="profile-inner ion-no-padding">
+      <ion-text *ngFor="let data of profileData">
+        <ion-text [routerLink]="data.link" class="profile-item">
+          <ion-icon [name]="data.icon"></ion-icon>
+          <ion-text class="profile-text">{{data.name}}</ion-text>
+          <ion-text class="profile-num">{{data.num}}</ion-text>
+        </ion-text>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

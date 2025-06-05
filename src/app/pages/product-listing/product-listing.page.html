@@ -1,0 +1,66 @@
+<ion-header class="ion-no-border ion-padding">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark">
+        <ion-icon  class="grid-icon" name="grid-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-buttons
+      [routerLink]="['/notifications']"
+      class="header-buttons"
+      slot="end"
+    >
+      <ion-text class="note-count">2</ion-text>
+      <ion-icon color="dark" name="notifications-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons class="ion-items-center">
+      <ion-searchbar mode="ios"></ion-searchbar>
+      <ion-icon class="filter-icon" name="filter-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-text class="main-title main-title-one">
+  <ion-icon
+    [routerLink]="['/pages/home']"
+    name="chevron-back-outline"
+  ></ion-icon>
+  <ion-label class="label">Trending Products</ion-label>
+</ion-text>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        *ngFor="let product of products"
+        size="6"
+        size-md="4"
+        size-lg="3"
+      >
+        <ion-card
+          [routerLink]="product.link"
+          class="ion-no-margin ion-no-padding products-card ion-text-center"
+        >
+          <ion-text class="image-warper">
+            <ion-img [src]="product.image"></ion-img>
+          </ion-text>
+          <ion-card-header>
+            <ion-card-title class="product-name"
+              >{{ product.name }}</ion-card-title
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text class="products-flex">
+              <ion-label class="product-price">${{ product.price }}</ion-label>
+              <ion-icon
+                class="cart-icon"
+                color="primary"
+                name="cart-outline"
+              ></ion-icon>
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

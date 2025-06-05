@@ -1,0 +1,140 @@
+ion-header {
+  ion-buttons {
+    width: 100%;
+  }
+  ion-text {
+    width: 100%;
+  }
+  .heart-icon {
+    display: block;
+    margin-left: auto;
+    color: var(--ion-color-text);
+  }
+}
+swiper-container {
+  .slide-img {
+    height: 15rem;
+    object-fit: cover;
+  }
+}
+.detail-flex {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2rem;
+  h5 {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+  }
+  .rating {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+  .price {
+    display: block;
+    margin-left: auto;
+    color: var(--ion-color-primary);
+    font-weight: 800;
+  }
+}
+// Segment styles
+ion-segment {
+  --background: none;
+  margin: 2rem 0 1rem;
+  .segment-button-checked {
+    color: var(--ion-color-primary);
+    --indicator-color: transparent;
+  }
+  segment-button-after-checked {
+    border-radius: 0px;
+    --indicator-box-shadow: 0;
+  }
+  ion-segment-button::part(indicator-background) {
+    border-radius: 0px;
+    --indicator-box-shadow: 0;
+    border-bottom: 1px solid var(--ion-color-primary);
+  }
+}
+ion-content {
+  font-size: 13px;
+  --color: var(--ion-color-text);
+  line-height: 22px;
+  font-weight: 300;
+}
+
+.reviews-section {
+  .first-flex {
+    display: flex;
+    gap: 10px;
+  }
+  ion-img {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+  }
+  ion-img::part(image) {
+    border-radius: 100%;
+  }
+  .time-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .name {
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  .ratings {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  .time {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--ion-color-gray);
+  }
+  .desc {
+    display: block;
+    padding-top: 6px;
+  }
+}
+.cart-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .product-quantity-buttons {
+    gap: 10px;
+    background: var(--ion-color-primary);
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    border-radius: 40px;
+    ion-icon {
+      font-size: 0.625rem;
+      display: flex;
+      width: 18px;
+      height: 18px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      border: 1px solid var(--ion-color-white);
+      color: var(--ion-color-white);
+    }
+    .product-quantity {
+      color: var(--ion-color-white);
+      font-size: 1rem;
+      line-height: 0;
+    }
+  }
+  .add-to-cart {
+    --border-radius: 50px;
+    font-weight: 300;
+    color: var(--ion-color-white);
+  }
+}

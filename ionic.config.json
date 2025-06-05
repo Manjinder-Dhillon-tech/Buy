@@ -1,0 +1,7 @@
+{
+  "name": "BuyNest",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,75 @@
+.common-header {
+  .common-label {
+    text-transform: capitalize;
+  }
+}
+.common-header.next {
+  margin-top: 1.5rem;
+}
+.address-card {
+  box-shadow: none;
+  padding: 12px;
+  background: var(--ion-color-background);
+  margin: 1rem 0rem;
+  border-radius: 2px;
+  border: 1px solid var(--ion-color-border);
+  ion-label {
+    display: block;
+    color: var(--ion-color-text);
+    font-size: 15px;
+  }
+  .text {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ion-color-text);
+  }
+}
+.address-card.credit {
+  margin: 0;
+}
+// Segment styles
+ion-segment {
+  --background: none;
+  margin: 1rem 0 0.5rem;
+  .segment-button-checked {
+    color: var(--ion-color-primary);
+    --indicator-color: transparent;
+  }
+  segment-button-after-checked {
+    border-radius: 0px;
+    --indicator-box-shadow: 0;
+  }
+  ion-segment-button::part(indicator-background) {
+    border-radius: 0px;
+    --indicator-box-shadow: 0;
+    border-bottom: 1px solid var(--ion-color-primary);
+  }
+}
+.last-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: none;
+  background: none;
+  padding: 0rem;
+  .total-amount {
+    text-align: center;
+    .prices {
+      display: block;
+      font-weight: 500;
+    }
+    .details {
+      color: var(--ion-color-text);
+      font-weight: 900;
+      font-size: 1rem;
+      padding-top: 2px;
+      display: block;
+    }
+  }
+  .view-btn {
+    --border-radius: 50px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--ion-color-white);
+  }
+}

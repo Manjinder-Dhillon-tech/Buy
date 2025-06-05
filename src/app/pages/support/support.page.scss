@@ -1,0 +1,30 @@
+.chat-messages {
+  padding: 0rem 0.5rem 0rem;
+}
+ion-item.own {
+  justify-content: flex-end;
+  --background: transparent;
+}
+ion-item.own ion-label {
+  text-align: right;
+}
+.message-text {
+  background: var(--ion-color-primary);
+  color: var(--ion-color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem 1rem 0rem 1rem;
+  display: inline-block;
+  margin-bottom: 0.2rem;
+  line-break: anywhere;
+  text-align: left;
+  font-size: 0.85rem;
+}
+ion-item:not(.own) .message-text {
+  background: #f1f1f1;
+  color: var(--ion-color-black);
+  border-radius: 1rem 1rem 1rem 0rem;
+}
+.message-time {
+  font-size: 0.7rem;
+  color: var(--ion-color-gray);
+}

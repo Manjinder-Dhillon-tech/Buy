@@ -1,0 +1,81 @@
+<ion-header class="ion-no-border ion-padding">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark">
+        <ion-icon class="grid-icon" name="grid-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-buttons
+      [routerLink]="['/notifications']"
+      class="header-buttons"
+      slot="end"
+    >
+      <ion-text class="note-count">2</ion-text>
+      <ion-icon color="dark" name="notifications-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons class="ion-items-center">
+      <ion-searchbar mode="ios"></ion-searchbar>
+      <ion-icon class="filter-icon" name="filter-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-text class="main-title main-title-one">
+  <ion-icon
+    [routerLink]="['/pages/home']"
+    name="chevron-back-outline"
+  ></ion-icon>
+  <ion-label class="label">Your Cart</ion-label>
+</ion-text>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row
+      *ngFor="let data of cartData"
+      class="ion-align-items-center cart-row"
+    >
+      <ion-col size="5" size-md="4">
+        <ion-card
+          class="ion-no-margin ion-no-padding products-card ion-text-center"
+        >
+          <ion-text class="image-warper">
+            <ion-img [src]="data.image"></ion-img>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="7" size-md="6">
+        <ion-card class="ion-no-margin ion-no-padding products-card content">
+          <ion-icon
+            color="danger"
+            class="trash-icon"
+            name="trash-outline"
+          ></ion-icon>
+          <ion-card-header>
+            <ion-card-title class="product-name">{{data.name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text class="products-flex">
+              <ion-label class="product-price">{{data.price}}</ion-label>
+            </ion-text>
+            <ion-buttons
+              class="ion-align-items-center product-quantity-buttons"
+            >
+              <ion-icon name="remove"></ion-icon>
+              <ion-text class="product-quantity">1</ion-text>
+              <ion-icon name="add"></ion-icon>
+            </ion-buttons>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-text class="price-flex">
+    <ion-label class="total-label">Total Amount</ion-label>
+    <ion-label class="total-price">$700000</ion-label>
+    <ion-button [routerLink]="['/checkout']" class="checkout-btn">
+      Checkout
+      <ion-icon slot="end" name="return-up-forward-outline"></ion-icon>
+    </ion-button>
+  </ion-text>
+</ion-content>

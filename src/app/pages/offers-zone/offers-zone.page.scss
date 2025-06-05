@@ -1,0 +1,46 @@
+.products-card .image-warper {
+  position: relative;
+
+  .ribbon {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #fff;
+  }
+  .ribbon {
+    --r: 0.125rem;
+    --c: #1868dbd9;
+    position: absolute;
+    top: 1.25rem;
+    left: calc(-1 * var(--r));
+    line-height: 1.8;
+    padding: 0 0.5em calc(2 * var(--r));
+    border-radius: var(--r) 0 0 var(--r);
+    background: radial-gradient(
+          100% 50% at left,
+          #1868dbd9 98%,
+          rgba(0, 0, 0, 0) 101%
+        )
+        100% 0 / 0.5lh calc(100% - 2 * var(--r)),
+      radial-gradient(
+          100% 50% at right,
+          rgba(0, 0, 0, 0.3333333333) 98%,
+          rgba(0, 0, 0, 0) 101%
+        )
+        0 100% / var(--r) calc(2 * var(--r)),
+      conic-gradient(
+          from 90deg at var(--r) calc(100% - 2 * var(--r)),
+          rgba(0, 0, 0, 0) 25%,
+          #1868db 0
+        )
+        0 0 / calc(101% - 0.5lh) 100%;
+    background-repeat: no-repeat;
+  }
+}
+.price-inner {
+  display: flex;
+  flex-direction: column;
+  .old-price {
+    font-size: 0.875rem;
+    text-decoration: line-through;
+  }
+}

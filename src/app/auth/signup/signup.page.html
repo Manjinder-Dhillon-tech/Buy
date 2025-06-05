@@ -1,0 +1,75 @@
+<ion-text class="top-round"></ion-text>
+
+<ion-content class="auth-page">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="6" size-lg="4">
+        <ion-card class="login-card">
+          <ion-card-header> SIGN UP </ion-card-header>
+          <ion-text class="desc-text"
+            >Create your account and enjoy a seamless shopping
+            experience!</ion-text
+          >
+          <ion-card-content>
+            <ion-list>
+              <ion-item>
+                <ion-input placeholder="Enter Name">
+                  <ion-icon
+                    slot="start"
+                    name="person"
+                    color="primary"
+                    aria-hidden="true"
+                  ></ion-icon>
+                </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input placeholder="Enter Email">
+                  <ion-icon
+                    slot="start"
+                    name="mail"
+                    color="primary"
+                    aria-hidden="true"
+                  ></ion-icon>
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-input placeholder="Enter Password">
+                  <ion-icon
+                    slot="start"
+                    name="lock-closed"
+                    aria-hidden="true"
+                    color="primary"
+                  ></ion-icon>
+                </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input placeholder="Confirm Password">
+                  <ion-icon
+                    slot="start"
+                    name="lock-closed"
+                    aria-hidden="true"
+                    color="primary"
+                  ></ion-icon>
+                </ion-input>
+              </ion-item>
+            </ion-list>
+
+            <ion-button
+              color="primary"
+              shape="round"
+              fill="solid"
+              expand="block"
+              >SIGN UP</ion-button
+            >
+          </ion-card-content>
+
+          <ion-text class="member-text">
+            Already a member?
+            <strong [routerLink]="['/login']">Sign In</strong>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

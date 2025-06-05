@@ -1,0 +1,57 @@
+<ion-text class="top-round"></ion-text>
+
+<ion-content class="auth-page">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="6" size-lg="4">
+        <ion-card class="login-card">
+          <ion-card-header> SIGN IN </ion-card-header>
+          <ion-text class="desc-text"
+            >Unlock exclusive deals with a single sign-in!</ion-text
+          >
+          <ion-card-content>
+            <ion-list>
+              <ion-item>
+                <ion-input placeholder="email@domain.com">
+                  <ion-icon
+                    slot="start"
+                    name="mail"
+                    color="primary"
+                    aria-hidden="true"
+                  ></ion-icon>
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-input placeholder="123456789">
+                  <ion-icon
+                    slot="start"
+                    name="lock-closed"
+                    aria-hidden="true"
+                    color="primary"
+                  ></ion-icon>
+                </ion-input>
+              </ion-item>
+            </ion-list>
+            <ion-text [routerLink]="['/forgot-password']" class="forgot-text">
+              Forgot Password?
+            </ion-text>
+
+            <ion-button
+              color="primary"
+              shape="round"
+              fill="solid"
+              expand="block"
+              [routerLink]="['/pages/home']"
+              >SIGN IN</ion-button
+            >
+          </ion-card-content>
+
+          <ion-text class="member-text">
+            Not a member? <strong [routerLink]="['/signup']">Join Now</strong>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

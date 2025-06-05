@@ -1,0 +1,162 @@
+<ion-header class="ion-no-border ion-padding">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-text class="main-title">
+        <ion-icon
+          [routerLink]="['/pages/cart']"
+          class="first"
+          name="chevron-back-outline"
+        ></ion-icon>
+        <ion-label class="label">Checkout</ion-label>
+      </ion-text>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-text class="common-header">
+    <ion-label class="common-label">Shipping Address</ion-label>
+  </ion-text>
+  <ion-card class="address-card">
+    <ion-card-content class="address-content ion-no-padding ion-no-margin">
+      <ion-label class="label">Name</ion-label>
+      <ion-text class="text">Amita Patel</ion-text>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="address-card">
+    <ion-card-content class="address-content ion-no-padding ion-no-margin">
+      <ion-label class="label">Address</ion-label>
+      <ion-text class="text">Jublee Hills, Mohali india</ion-text>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="address-card">
+    <ion-card-content class="address-content ion-no-padding ion-no-margin">
+      <ion-label class="label">Pin Code</ion-label>
+      <ion-text class="text">500019</ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-text class="common-header next">
+    <ion-label class="common-label">Payment Method</ion-label>
+  </ion-text>
+  <ion-segment [scrollable]="true">
+    <ion-segment-button value="debit" content-id="debit">
+      <ion-label>Debit Card</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="credit" content-id="credit">
+      <ion-label>Credit Card</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="upi" content-id="upi">
+      <ion-label>UPI</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="net" content-id="net">
+      <ion-label>Net Banking</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-segment-view>
+    <ion-segment-content id="debit">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-card class="address-card credit">
+              <ion-card-content
+                class="address-content ion-no-padding ion-no-margin"
+              >
+                <ion-label class="label">Name on card</ion-label>
+                <ion-text class="text">Amita Patel</ion-text>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12">
+            <ion-card class="address-card credit">
+              <ion-card-content
+                class="address-content ion-no-padding ion-no-margin"
+              >
+                <ion-label class="label">Card Number</ion-label>
+                <ion-text class="text">8888 9999 7777 6666</ion-text>
+              </ion-card-content>
+            </ion-card></ion-col
+          >
+          <ion-col size="6">
+            <ion-card class="address-card credit">
+              <ion-card-content
+                class="address-content ion-no-padding ion-no-margin"
+              >
+                <ion-label class="label">Exp date</ion-label>
+                <ion-text class="text">09/28</ion-text>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card class="address-card credit">
+              <ion-card-content
+                class="address-content ion-no-padding ion-no-margin"
+              >
+                <ion-label class="label">CVV</ion-label>
+                <ion-text class="text">333</ion-text>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-segment-content>
+    <ion-segment-content id="credit"
+      ><ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-card class="address-card credit">
+              <ion-card-content
+                class="address-content ion-no-padding ion-no-margin"
+              >
+                <ion-label class="label">Name on card</ion-label>
+                <ion-text class="text">Amita Patel</ion-text>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12">
+            <ion-card class="address-card credit">
+              <ion-card-content
+                class="address-content ion-no-padding ion-no-margin"
+              >
+                <ion-label class="label">Card Number</ion-label>
+                <ion-text class="text">8888 9999 7777 6666</ion-text>
+              </ion-card-content>
+            </ion-card></ion-col
+          >
+          <ion-col size="6">
+            <ion-card class="address-card credit">
+              <ion-card-content
+                class="address-content ion-no-padding ion-no-margin"
+              >
+                <ion-label class="label">Exp date</ion-label>
+                <ion-text class="text">09/28</ion-text>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card class="address-card credit">
+              <ion-card-content
+                class="address-content ion-no-padding ion-no-margin"
+              >
+                <ion-label class="label">CVV</ion-label>
+                <ion-text class="text">333</ion-text>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-segment-content>
+    <ion-segment-content id="upi">UPI</ion-segment-content>
+    <ion-segment-content id="net">Net Banking</ion-segment-content>
+  </ion-segment-view>
+</ion-content>
+<ion-card class="last-buttons ">
+  <ion-text class="total-amount">
+    <ion-text class="prices">Total Amount</ion-text>
+    <ion-text class="details">$1700</ion-text>
+  </ion-text>
+  <ion-button class="view-btn">
+    Place Order
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-button>
+</ion-card>

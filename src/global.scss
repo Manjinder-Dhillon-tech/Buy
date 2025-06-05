@@ -1,0 +1,277 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+// scrollbar styles
+ion-content {
+  --overflow: auto;
+  scrollbar-width: none;
+}
+
+ion-content::-webkit-scrollbar {
+  display: none;
+}
+ion-content::part(scroll) {
+  scrollbar-width: none;
+  padding-top: 0;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+// Header styles
+ion-toolbar {
+  --background: var(--ion-color-transparent);
+}
+.grid-icon {
+  font-size: 1.58rem;
+}
+.header-buttons {
+  padding-right: 0.75rem;
+  position: relative;
+  ion-icon {
+    font-size: 1.563rem;
+    cursor: pointer;
+  }
+  .note-count {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.125rem;
+    height: 1.125rem;
+    background: var(--ion-color-red);
+    color: var(--ion-color-white);
+    border-radius: 50%;
+    top: 0.063rem;
+    right: 0.5rem;
+    font-size: 0.625rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+}
+.sc-ion-searchbar-ios {
+  --border-radius: 3.125rem;
+}
+.filter-icon {
+  font-size: 1.625rem;
+  padding-right: 0.75rem;
+}
+.sc-ion-searchbar-ios-h {
+  margin-top: 0.938rem;
+  padding-bottom: 0.938rem;
+  min-height: 3.25rem;
+  padding-left: 0;
+}
+
+//
+.main-label {
+  font-weight: 400;
+  color: var(--ion-color-gray);
+  padding-bottom: 0.6rem;
+  display: block;
+}
+
+// card css
+.products-card {
+  box-shadow: none;
+  background: transparent;
+  ion-card-header {
+    padding-inline-end: 15px;
+    padding-inline-start: 15px;
+  }
+  .image-warper {
+    padding: 0.313rem;
+    display: block;
+    background: var(--ion-color-bg);
+    border-radius: 0.313rem;
+    max-width: 12.5rem;
+    ion-img::part(image) {
+      border-radius: 0.313rem;
+      object-fit: contain;
+    }
+  }
+  .product-name {
+    font-size: 0.938rem;
+  }
+  .products-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .product-price {
+      font-weight: 600;
+      font-size: 0.938rem;
+    }
+  }
+}
+
+// Sidebar css
+.sidebar-content {
+  .sidebar-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  ion-checkbox {
+    --border-radius: 0.313rem;
+    --size: 1.2rem;
+  }
+  ion-item {
+    --padding-start: 0;
+  }
+}
+
+//
+.common-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .common-label {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
+
+.main-title-one {
+  padding: 0 1rem 0.85rem;
+}
+
+.main-title {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  ion-icon {
+    font-size: 1.5rem;
+    color: var(--ion-color-primary);
+  }
+  .label {
+    font-weight: 400;
+    color: var(--ion-color-gray);
+    display: block;
+  }
+}
+
+// Auth pages css
+.top-round {
+  position: absolute;
+  top: -1.875rem;
+  right: -1.875rem;
+  display: block;
+  width: 6.25rem;
+  height: 6.25rem;
+  background: var(--ion-color-primary);
+  border-radius: 100%;
+  z-index: 99;
+  box-shadow: rgba(0, 0, 0, 0.24) 0rem 0.1875rem 0.5rem;
+}
+.auth-page {
+  ion-grid {
+    height: 100%;
+  }
+  ion-row {
+    height: 100%;
+  }
+  .login-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    background: transparent;
+    ion-card-header {
+      font-size: 1.875rem;
+      text-align: center;
+      font-weight: 700;
+      color: var(--ion-color-text);
+      padding-bottom: 0.313rem;
+    }
+    .desc-text {
+      text-align: center;
+      font-size: 0.955rem;
+      padding-bottom: 1.25rem;
+    }
+    ion-card-content {
+      padding: 0;
+      width: 100%;
+      ion-item {
+        margin-top: 1.25rem;
+        --padding-start: 0;
+        --padding-end: 0;
+      }
+      .forgot-text {
+        text-align: right;
+        display: block;
+        margin-top: 0.625rem;
+        color: var(--ion-color-primary);
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      ion-button {
+        display: block;
+        margin-top: 1.875rem;
+      }
+    }
+    .member-text {
+      margin-top: 0.9375rem;
+      font-size: 0.85rem;
+      display: block;
+      strong {
+        color: var(--ion-color-primary);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Segement css
+ion-segment-view {
+  height: fit-content;
+  overflow: auto;
+}

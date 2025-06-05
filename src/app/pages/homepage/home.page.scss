@@ -1,0 +1,37 @@
+.products-card {
+  box-shadow: none;
+  .image-warper {
+    padding: 5px;
+    display: block;
+    background: var(--ion-color-bg);
+    border-radius: 5px;
+    ion-img::part(image) {
+      border-radius: 5px;
+    }
+  }
+  .product-name {
+    font-size: 1rem;
+  }
+  .products-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .product-price {
+      font-weight: 600;
+    }
+  }
+}
+
+// Segment styles
+ion-segment {
+  --background: none;
+  margin-bottom: 1rem;
+}
+ion-segment-button::part(indicator-background) {
+  background: var(--ion-color-primary);
+  border-radius: 20px;
+}
+
+ion-segment-button.segment-button-checked.ios::part(native) {
+  color: var(--ion-color-white);
+}

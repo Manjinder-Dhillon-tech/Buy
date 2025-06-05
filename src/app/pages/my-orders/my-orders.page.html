@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border ion-padding">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-text class="main-title">
+        <ion-icon
+          [routerLink]="['/pages/home']"
+          class="first"
+          name="chevron-back-outline"
+        ></ion-icon>
+        <ion-label class="label">My Orders</ion-label>
+      </ion-text>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list *ngFor="let order of orderListing">
+    <ion-item [routerLink]="['/track-order']" class="order-item">
+      <ion-text class="label-section">
+        <ion-label>{{order.orderId}}</ion-label>
+        <ion-text class="order-date">{{order.orderDate}}</ion-text>
+        <ion-text class="delivery-date"> {{order.delivery}} </ion-text>
+      </ion-text>
+      <ion-text>
+        <ion-text class="image-warper">
+          <ion-img [src]="order.img"></ion-img>
+        </ion-text>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>

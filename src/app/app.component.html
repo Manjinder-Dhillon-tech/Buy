@@ -1,0 +1,148 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ng-container *ngIf="currentRoute === 'pages/home'">
+      <ion-header class="ion-no-border">
+        <ion-toolbar color="primary">
+          <ion-card-content class="upper-card-side">
+            <ion-img
+              src="../../assets/profile-img.jpg"
+              class="profile-img"
+            ></ion-img>
+            <ion-text class="name">Amita Patel</ion-text>
+            <ion-text class="email">amita.patel&#64;gmail.com</ion-text>
+          </ion-card-content>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding homesidebar-content">
+        <ion-card-content
+          *ngFor="let data of profileData"
+          class="profile-inner ion-no-padding"
+        >
+          <ion-text
+            class="profile-item"
+            [routerLink]="data.link"
+            (click)="onProfileItemClick(data)"
+          >
+            <ion-icon [name]="data.icon"></ion-icon>
+            <ion-text class="profile-text">{{ data.name }}</ion-text>
+          </ion-text>
+        </ion-card-content>
+      </ion-content>
+    </ng-container>
+    <ng-container *ngIf="currentRoute === 'product-listing'">
+      <ion-header>
+        <ion-toolbar color="light">
+          <ion-title>Filters</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding sidebar-content">
+        <ion-label class="sidebar-label">Categories</ion-label>
+
+        <ion-list *ngFor="let item of categories" class="sidebar-list">
+          <ion-item class="sidebar-item" lines="none">
+            <ion-checkbox labelPlacement="end">{{ item.name }}</ion-checkbox>
+          </ion-item>
+        </ion-list>
+
+        <ion-label class="sidebar-label">Brand</ion-label>
+        <ion-list *ngFor="let item of brands" class="sidebar-list">
+          <ion-item class="sidebar-item" lines="none">
+            <ion-checkbox labelPlacement="end">{{ item.name }}</ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-container>
+    <ng-container *ngIf="currentRoute === 'offers-zone'">
+      <ion-header>
+        <ion-toolbar color="light">
+          <ion-title>Filters</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding sidebar-content">
+        <ion-label class="sidebar-label">Categories</ion-label>
+
+        <ion-list *ngFor="let item of categories" class="sidebar-list">
+          <ion-item class="sidebar-item" lines="none">
+            <ion-checkbox labelPlacement="end">{{ item.name }}</ion-checkbox>
+          </ion-item>
+        </ion-list>
+
+        <ion-label class="sidebar-label">Brand</ion-label>
+        <ion-list *ngFor="let item of brands" class="sidebar-list">
+          <ion-item class="sidebar-item" lines="none">
+            <ion-checkbox labelPlacement="end">{{ item.name }}</ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-container>
+    <ng-container *ngIf="currentRoute === 'pages/cart'">
+      <ion-header>
+        <ion-toolbar color="light">
+          <ion-title>Filters</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding sidebar-content">
+        <ion-label class="sidebar-label">Categories</ion-label>
+
+        <ion-list *ngFor="let item of categories" class="sidebar-list">
+          <ion-item class="sidebar-item" lines="none">
+            <ion-checkbox labelPlacement="end">{{ item.name }}</ion-checkbox>
+          </ion-item>
+        </ion-list>
+
+        <ion-label class="sidebar-label">Brand</ion-label>
+        <ion-list *ngFor="let item of brands" class="sidebar-list">
+          <ion-item class="sidebar-item" lines="none">
+            <ion-checkbox labelPlacement="end">{{ item.name }}</ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-container>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-router-outlet></ion-router-outlet>
+  </div>
+
+  <!-- Logout Modal -->
+  <ion-modal
+    #logoutModal
+    trigger="open-modal"
+    [initialBreakpoint]="1"
+    [breakpoints]="[0, 1]"
+  >
+    <ng-template>
+      <ion-card class="logout-modal">
+        <ion-card-content>
+          <ion-icon  name="information-circle-outline"></ion-icon>
+          <ion-text> Are you sure you want to logout? </ion-text>
+        </ion-card-content>
+        <ion-buttons>
+          <ion-button
+            shape="round"
+            class="close"
+            size="large"
+            slot="start"
+            fill="outline"
+            (click)="closeMenuAndModal()"
+          >
+            Close
+          </ion-button>
+          <ion-button
+            shape="round"
+            class="yes"
+            size="large"
+            slot="end"
+            fill="solid"
+            (click)="logoutAndRedirect()"
+          >
+            Yes
+          </ion-button>
+        </ion-buttons>
+      </ion-card>
+    </ng-template>
+  </ion-modal>
+</ion-app>

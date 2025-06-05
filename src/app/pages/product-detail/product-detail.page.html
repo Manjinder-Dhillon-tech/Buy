@@ -1,0 +1,114 @@
+<ion-header class="ion-no-border ion-padding">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-text class="main-title">
+        <ion-icon
+          [routerLink]="['/pages/home']"
+          class="first"
+          name="chevron-back-outline"
+        ></ion-icon>
+        <ion-icon class="heart-icon" name="heart-outline"></ion-icon>
+      </ion-text>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <swiper-container
+    [slidesPerView]="1"
+    effect="cube"
+    scrollbar="true"
+    loop="true"
+    [autoplay]="{ delay: 2000, disableOnInteraction: false }"
+    [scrollbar]="{ draggable: true }"
+  >
+    <swiper-slide>
+      <ion-img
+        src="../../assets/products/chai-one.jpg"
+        alt="slideOne"
+        class="slide-img"
+      ></ion-img>
+    </swiper-slide>
+    <swiper-slide>
+      <ion-img
+        src="../../assets/products/chai-one.jpg"
+        alt="slideOne"
+        class="slide-img"
+      ></ion-img
+    ></swiper-slide>
+    <swiper-slide>
+      <ion-img
+        src="../../assets/products/chai-one.jpg"
+        alt="slideOne"
+        class="slide-img"
+      ></ion-img
+    ></swiper-slide>
+  </swiper-container>
+
+  <ion-text class="detail-flex">
+    <h5>Pankha Chair</h5>
+    <ion-text class="rating"
+      ><ion-icon color="primary" name="star-outline"></ion-icon>4.5</ion-text
+    >
+    <ion-text class="price">$1000</ion-text>
+  </ion-text>
+
+  <ion-segment>
+    <ion-segment-button value="description" content-id="description">
+      <ion-label>Description</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="reviews" content-id="reviews">
+      <ion-label>Reviews</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-segment-view>
+    <ion-segment-content id="description">
+      <ion-content
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+        assumenda vero repellat dolores obcaecati incidunt rerum quam, optio
+        sapiente ullam beatae voluptatem ipsa nulla, modi neque consectetur odio
+        maiores! Necessitatibus eveniet praesentium omnis minus fuga beatae sunt
+        dicta nihil laboriosam!</ion-content
+      >
+    </ion-segment-content>
+    <ion-segment-content class="reviews-section" id="reviews">
+      <ion-text class="first-flex">
+        <ion-img
+          src="../../../assets/profile-img.jpg"
+          class="user-img"
+        ></ion-img>
+        <ion-text>
+          <ion-text class="name-section">
+            <ion-text class="time-flex">
+              <ion-text class="name">Alexa Wallers</ion-text>
+              <ion-text class="time">Today</ion-text>
+            </ion-text>
+            <ion-text class="ratings">
+              <ion-icon color="warning" name="star"></ion-icon>
+              <ion-icon color="warning" name="star"></ion-icon>
+              <ion-icon color="warning" name="star"></ion-icon>
+              <ion-icon color="warning" name="star"></ion-icon>
+              <ion-icon color="medium" name="star"></ion-icon>
+            </ion-text>
+          </ion-text>
+          <ion-text class="desc"
+            >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus
+            tenetur rerum animi voluptatem. Ipsam id sequi eum tempora, error
+            accusantium?</ion-text
+          >
+        </ion-text>
+      </ion-text>
+    </ion-segment-content>
+  </ion-segment-view>
+</ion-content>
+<ion-text class="cart-flex ion-padding">
+  <ion-buttons class="ion-align-items-center product-quantity-buttons">
+    <ion-icon name="remove"></ion-icon>
+    <ion-text class="product-quantity">1</ion-text>
+    <ion-icon name="add"></ion-icon>
+  </ion-buttons>
+  <ion-button class="add-to-cart">
+    ADD TO CART
+    <ion-icon slot="end" name="cart-outline"></ion-icon>
+  </ion-button>
+</ion-text>

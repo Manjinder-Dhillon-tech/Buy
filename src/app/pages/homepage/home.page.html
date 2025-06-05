@@ -1,0 +1,129 @@
+<ion-header class="ion-no-border ion-padding">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark">
+        <ion-icon  class="grid-icon" name="grid-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-buttons
+      [routerLink]="['/notifications']"
+      class="header-buttons"
+      slot="end"
+    >
+      <ion-text class="note-count">2</ion-text>
+      <ion-icon color="dark" name="notifications-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons class="ion-items-center">
+      <ion-searchbar mode="ios"></ion-searchbar>
+      <ion-icon class="filter-icon" name="filter-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-text class="common-header">
+    <ion-label class="common-label">Trending Products</ion-label>
+    <ion-button
+      [routerLink]="['/product-listing']"
+      class="ion-no-padding"
+      fill="clear"
+      >See All</ion-button
+    >
+  </ion-text>
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        *ngFor="let product of trendingProducts"
+        size="6"
+        size-md="4"
+        size-lg="3"
+      >
+        <app-product-card [product]="product"></app-product-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-text class="common-header">
+    <ion-label class="common-label">Popular Categories</ion-label>
+    <ion-button class="ion-no-padding" fill="clear">See All</ion-button>
+  </ion-text>
+  <ion-segment [scrollable]="true">
+    <ion-segment-button
+      *ngFor="let item of segments"
+      [value]="item.value"
+      [attr.content-id]="item.id"
+    >
+      <ion-label>{{ item.name }}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-segment-view>
+    <ion-segment-content id="first">
+      <ion-grid>
+        <ion-row>
+          <ion-col
+            *ngFor="let product of allProducts"
+            size="6"
+            size-md="4"
+            size-lg="3"
+          >
+            <app-product-card [product]="product"></app-product-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-segment-content>
+    <ion-segment-content id="second">
+      <ion-grid>
+        <ion-row>
+          <ion-col
+            *ngFor="let product of electronicProducts"
+            size="6"
+            size-md="4"
+            size-lg="3"
+          >
+            <app-product-card [product]="product"></app-product-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-segment-content>
+    <ion-segment-content id="third"
+      ><ion-grid>
+        <ion-row>
+          <ion-col
+            *ngFor="let product of menProducts"
+            size="6"
+            size-md="4"
+            size-lg="3"
+          >
+            <app-product-card [product]="product"></app-product-card>
+          </ion-col>
+        </ion-row> </ion-grid
+    ></ion-segment-content>
+    <ion-segment-content id="fourth"
+      ><ion-grid>
+        <ion-row>
+          <ion-col
+            *ngFor="let product of sportProducts"
+            size="6"
+            size-md="4"
+            size-lg="3"
+          >
+            <app-product-card [product]="product"></app-product-card>
+          </ion-col>
+        </ion-row> </ion-grid
+    ></ion-segment-content>
+
+    <ion-segment-content id="fifth">
+      <ion-row>
+        <ion-col
+          *ngFor="let product of womenProducts"
+          size="6"
+          size-md="4"
+          size-lg="3"
+        >
+          <app-product-card [product]="product"></app-product-card>
+        </ion-col>
+      </ion-row>
+    </ion-segment-content>
+  </ion-segment-view>
+</ion-content>

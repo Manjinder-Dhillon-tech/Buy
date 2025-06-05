@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border ion-padding">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-text class="main-title">
+        <ion-icon
+          [routerLink]="['/pages/home']"
+          class="first"
+          name="chevron-back-outline"
+        ></ion-icon>
+        <ion-label class="label">Track Order</ion-label>
+      </ion-text>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list *ngFor="let order of orderListing">
+    <ion-item class="order-item">
+      <ion-text class="label-section">
+        <ion-label>{{order.orderId}}</ion-label>
+        <ion-text class="order-date">{{order.orderDate}}</ion-text>
+        <ion-text class="delivery-date">
+          <ion-text class="ratings">
+            <ion-icon color="warning" name="star"></ion-icon>
+            <ion-icon color="warning" name="star"></ion-icon>
+            <ion-icon color="warning" name="star"></ion-icon>
+            <ion-icon color="warning" name="star"></ion-icon>
+            <ion-icon color="medium" name="star"></ion-icon> </ion-text
+        ></ion-text>
+      </ion-text>
+      <ion-text>
+        <ion-text class="image-warper">
+          <ion-img [src]="order.img"></ion-img>
+        </ion-text>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+  <ion-card class="track-steps-vertical">
+    <ion-card-content
+      *ngFor="let step of trackSteps; let i = index"
+      class="step-container-vertical"
+    >
+      <div class="step-row-vertical">
+        <div class="step-circle-vertical" [class.completed]="i <= currentStep">
+          <ion-icon [name]="step.icon"></ion-icon>
+        </div>
+        <div class="step-info-vertical">
+          <ion-text class="step-label-vertical">{{ step.label }}</ion-text>
+          <ion-text class="step-desc-vertical">{{ step.desc }}</ion-text>
+        </div>
+      </div>
+      <ion-text
+        *ngIf="i < trackSteps.length - 1"
+        class="step-line-vertical"
+        [class.completed]="i < currentStep"
+      ></ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

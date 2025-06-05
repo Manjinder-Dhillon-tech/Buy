@@ -1,0 +1,17 @@
+<ion-card
+  [routerLink]="product.link"
+  class="ion-no-margin ion-no-padding products-card ion-text-center"
+>
+  <ion-text class="image-warper">
+    <ion-img [src]="product.image"></ion-img>
+  </ion-text>
+  <ion-card-header>
+    <ion-card-title class="product-name">{{ product.name }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-text class="products-flex">
+      <ion-label class="product-price">${{ product.price }}</ion-label>
+      <ion-icon class="cart-icon" color="primary" name="cart-outline"></ion-icon>
+    </ion-text>
+  </ion-card-content>
+</ion-card>
